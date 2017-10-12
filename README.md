@@ -1,2 +1,2 @@
-# project-2
-App for Women Hiking Community
+# Project-2
+This is a web and mobile app to share tips and connect with the female hiking community.

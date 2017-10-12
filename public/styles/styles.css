@@ -1,0 +1,58 @@
+.container {
+  width: 100%;
+  height: 100%;
+  margin-top: 0px;
+  padding: 0px;
+}
+ul {
+  color: white;
+  text-decoration: none;
+}
+li {
+  color: white;
+  display: inline;
+  float: right;
+  padding: 5px;
+  font-size: 25px;
+}
+a {
+    color: white;
+    text-decoration: none;
+}
+li a:hover {
+    background-color: black;
+}
+.header {
+    background-image: url("http://nebula.wsimg.com/abd7f73ada41c0aece5e7c2bbeda5272?AccessKeyId=A25421F4AA8D929DC055&disposition=0&alloworigin=1");
+    background-repeat: no-repeat;
+    /*background-size: contain;*/
+    height: 500px;
+    background-size: 100% 100%;
+    margin: 0 auto;
+}
+h1 {
+  color: white;
+  padding: 18%;
+  font-size: 100px;
+  text-shadow: 2px 2px 2px 2px black;
+}
+h2{
+  color: black;
+  font-size: 20px;
+  text-align: center;
+  margin-top: 40px;
+  padding: 10px;
+}
+#map {
+        margin-top: 5%;
+        margin-left: 25%;
+        height: 50%;
+        width: 50%;
+        border: 2px black solid;
+      }
+      /* Optional: Makes the sample page fill the window. */
+html, body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+      }
