@@ -9,7 +9,7 @@
   <!-- STYLESHEETS -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
   <link rel="stylesheet" href="styles/styles.css">
-  <link rel="form" hrf="views/form.html">
+
   <!-- VENDOR SCRIPTS -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.5/handlebars.min.js"></script>
@@ -29,15 +29,18 @@
         <h1 class="text-center">Hike Squad</h1>
       </div>
       <div class="add"><h2>A new kind of exploration</h2></div>
+      <!-- Three images -->
       <div class="boxes">
       <img class="lake" src="http://wpnature.com/wp-content/uploads/2016/08/forest-rocky-mountain-national-park-autumn-blue-lake-red-snowy-peaks-yellow-beautiful-clouds-colorado-green-fall-bear-wallpaper-nature.jpg" alt="Mountain View">
       <img class="hill" src="https://i.redd.it/d9nvcqhkcznx.jpg" alt="Hill">
       <img class="mountain" src="https://bouldercounty.files.wordpress.com/2015/10/colorado-rocky-mountain-autumn-season-beauty-900.jpg?w=604&h=403" alt="Mountains">
       </div>
+      <!-- Detailed info  -->
       <div class="explain">
         <h2>Get Connected</h2>
-        <p>Check out the hikes in your area by exploring this map! Or you can add a new hike by clicking <a id="formButton" href="./form.html">here!</a></p>
+        <p>Check out the hikes in your area by exploring this map! Or you can add a new hike by clicking <a id="formButton" href="/form">here!</a></p>
       </div>
+      <!-- Creates the actual Google map -->
   <div id="map"></div>
     <script>
       var map;
@@ -48,17 +51,13 @@
           mapTypeId: 'terrain'
         });
 
-        // Create a <script> tag and set the USGS URL as the source.
+      // Create a <script> tag and set the USGS URL as the source.
         var script = document.createElement('script');
-        // This example uses a local copy of the GeoJSON stored at
-        // http://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/2.5_week.geojsonp
-        // script.src = 'https://developers.google.com/maps/documentation/javascript/examples/json/earthquake_GeoJSONP.js';
+      // inserts my geoson data
         script.src = '/hikes.geojson';
         document.getElementsByTagName('head')[0].appendChild(script);
       }
 
-      // Loop through the results array and place a marker for each
-      // set of coordinates.
       window.eqfeed_callback = function(results) {
         for (var i = 0; i < results.features.length; i++) {
           var coords = results.features[i].geometry.coordinates;
@@ -67,6 +66,17 @@
             position: latLng,
             map: map
           });
+        }
+        map.addListener('click', function (e) {
+        placeMarkerAndPanTo(e.latLng, map);
+        });
+
+        function placeMarkerAndPanTo(latLng, map) {
+          var marker = new google.maps.Marker({
+          position: latLng,
+          map: map
+          });
+        map.PanTo(latLng);
         }
       }
     </script>

@@ -21,7 +21,11 @@ a {
     text-decoration: none;
 }
 li a:hover {
-    background-color: black;
+    background-color: #201F1F;
+    color: white;
+    text-decoration: none;
+    border-radius: 3px;
+    padding: 3px;
 }
 .header {
     background-image: url("http://nebula.wsimg.com/abd7f73ada41c0aece5e7c2bbeda5272?AccessKeyId=A25421F4AA8D929DC055&disposition=0&alloworigin=1");
@@ -65,6 +69,7 @@ h2{
   float: left;
   height: 25%;
   width: 25%;
+  margin-top: .5%;
   margin-left: 2%;
   margin-right: 2%;
 }
@@ -94,10 +99,62 @@ h2{
     height: 50%;
     width: 50%;
     border: 2px black solid;
+    border-radius: 3px;
 }
-      /* Optional: Makes the sample page fill the window. */
+
 html, body {
-        height: 100%;
-        margin: 0;
-        padding: 0;
-      }
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+/*     Form HTML*/
+
+.form {
+  width: 30%;
+  padding: 5px;
+/*  margin-left: 40%;*/
+  margin-top: 5%;
+  margin-bottom: 5%;
+  border-radius: 5px;
+}
+
+.square {
+  background-image: url("http://catchcarri.com/wp-content/uploads/2013/09/Frank_6304221409.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-opacity: 0.5;
+  background-position: 50% 50%;
+  width: 25%;
+  margin-left: 37%;
+  text-align: center;
+  border-radius: 5px;
+}
+legend {
+  margin-left: 150%;
+  color: black;
+}
+.input {
+  width: 300%;
+  padding: 5px;
+  margin-top: 20%;
+  margin-left: 30%;
+  margin-bottom: 15%;
+  opacity: 1;
+  border-radius: 3px;
+  border-style: none;
+}
+.submit {
+  background-color: white;
+  color: black;
+  width: 100%;
+  margin-left: 120%;
+  font-size: 100%;
+  font-weight: large;
+  margin-top: 12%;
+}
+.submit:hover {
+  color: white;
+  background-color: black;
+  margin-top: 12%;
+}

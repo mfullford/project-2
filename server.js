@@ -10,12 +10,13 @@ app.get('/', function (req, res) {
   res.sendFile('views/index.html' , { root : __dirname});
 });
 
+// the hike data on the map
 app.get('/hikes.geojson', function (req, res) {
   res.sendFile('/hikes.geojson' , { root : __dirname});
 });
 
-app.get('/', function (req, res) {
-	console.log("hey use this other page");
+// Form.html
+app.get('/form', function (req, res) {
   res.sendFile('views/form.html' , { root : __dirname});
 });
 
