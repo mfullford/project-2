@@ -4,12 +4,12 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>Hike Squad</title>
+  <title>Form</title>
 
   <!-- STYLESHEETS -->
+  <link rel="form" hrf="views/index.html">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
   <link rel="stylesheet" href="styles/styles.css">
-  <link rel="form" hrf="views/form.html">
   <!-- VENDOR SCRIPTS -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.5/handlebars.min.js"></script>
@@ -26,25 +26,21 @@
         <li><a href="">Share</a></li>
         <li><a href="">Explore</a></li>
       </ul>
-        <h1 class="text-center">Hike Squad</h1>
+        <h1 class="text-center">Hiking Squad</h1>
       </div>
-      <div class="add"><h2>A new kind of exploration</h2></div>
-      <div class="boxes">
-      <img class="lake" src="http://wpnature.com/wp-content/uploads/2016/08/forest-rocky-mountain-national-park-autumn-blue-lake-red-snowy-peaks-yellow-beautiful-clouds-colorado-green-fall-bear-wallpaper-nature.jpg" alt="Mountain View">
-      <img class="hill" src="https://i.redd.it/d9nvcqhkcznx.jpg" alt="Hill">
-      <img class="mountain" src="https://bouldercounty.files.wordpress.com/2015/10/colorado-rocky-mountain-autumn-season-beauty-900.jpg?w=604&h=403" alt="Mountains">
-      </div>
-      <div class="explain">
-        <h2>Get Connected</h2>
-        <p>Check out the hikes in your area by exploring this map! Or you can add a new hike by clicking <a id="formButton" href="./form.html">here!</a></p>
-      </div>
+        <form action="#">
+          <input type="text" name="where" placeholder="Where?" />
+          <input type="text" name="when" placeholder="When?" />
+          <input type="text" name="who" placeholder="Who?" />
+          <input type="submit" name="submit" value="Submit your hike" />
+        </form>
   <div id="map"></div>
     <script>
       var map;
       function initMap() {
         map = new google.maps.Map(document.getElementById('map'), {
-          zoom: 4,
-          center: new google.maps.LatLng(39.7392,-104.9903),
+          zoom: 2,
+          center: new google.maps.LatLng(2.8,-187.3),
           mapTypeId: 'terrain'
         });
 
@@ -52,7 +48,7 @@
         var script = document.createElement('script');
         // This example uses a local copy of the GeoJSON stored at
         // http://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/2.5_week.geojsonp
-        // script.src = 'https://developers.google.com/maps/documentation/javascript/examples/json/earthquake_GeoJSONP.js';
+        // https://developers.google.com/maps/documentation/javascript/examples/json/earthquake_GeoJSONP.js
         script.src = '/hikes.geojson';
         document.getElementsByTagName('head')[0].appendChild(script);
       }
@@ -73,6 +69,7 @@
     <script async defer
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDkVV9oxUvanUOsvlHPAVp9ru6wf-ZysNY&callback=initMap">
     </script>
-    
+
+  </div>
 </body>
 </html>

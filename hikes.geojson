@@ -1,0 +1,41 @@
+eqfeed_callback (
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "Hike Name": "Dream Lake",
+        "State": "Colorado",
+        "Date": "October 22",
+        "Time": 8,
+        "Who": "All welcome!",
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -105.64581,
+          40.31196
+        ]
+      },
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Hike Name": "Cibecue Falls",
+        "State": "Arizona",
+        "Date": "October 26",
+        "Time": 10,
+        "Who": "All welcome!",
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -110.5562496,
+          33.8384782
+        ]
+      },
+    },
+  ]
+}
+);
