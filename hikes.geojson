@@ -36,6 +36,23 @@ eqfeed_callback (
         ]
       },
     },
+        {
+      "type": "Feature",
+      "properties": {
+        "Hike Name": "Old Rag Shenendoah",
+        "State": "Virginia",
+        "Date": "October 29",
+        "Time": 8,
+        "Who": "All welcome!",
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -78.3158,
+          38.5517
+        ]
+      },
+    },
   ]
 }
 );

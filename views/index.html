@@ -27,14 +27,14 @@
 </head>
 <body>
   <div class="container">
-    <div class="header">
+    <div class="parallaxHeader">
       <ul>
         <li><a href="">Connect</a></li>
         <li><a href="">Share</a></li>
         <li><a href="">Explore</a></li>
       </ul>
-        <h1 class="text-center">Hike Squad</h1>
-      </div>
+      <h1 class="text-center">Hike Squad</h1>
+    </div>
       <div class="add"><h2>A new kind of exploration</h2></div>
       <!-- Three images -->
       <div class="boxes">
@@ -184,6 +184,7 @@
             map: map
           });
         }
+      };
         map.addListener('click', function (e) {
         placeMarkerAndPanTo(e.latLng, map);
         });
@@ -194,12 +195,29 @@
           map: map
           });
         map.PanTo(latLng);
-        }
-      }
+        };
+        
+        //placeID
+        // ClickEventHandler.prototype.getPlaceInformation = function(placeId) {
+        // var me = this;
+        // this.placesService.getDetails({placeId: placeId}, function(place, status) {
+        //   if (status === 'OK') {
+        //     me.infowindow.close();
+        //     me.infowindow.setPosition(place.geometry.location);
+        //     me.infowindowContent.children['place-icon'].src = place.icon;
+        //     me.infowindowContent.children['place-name'].textContent = place.name;
+        //     me.infowindowContent.children['place-id'].textContent = place.place_id;
+        //     me.infowindowContent.children['place-address'].textContent =
+        //         place.formatted_address;
+        //     me.infowindow.open(me.map);
+        //   }
+        // });
+      
     </script>
     <script async defer
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDkVV9oxUvanUOsvlHPAVp9ru6wf-ZysNY&callback=initMap">
     </script>
-    
+    </div>
+    });
 </body>
 </html>

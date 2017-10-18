@@ -1,0 +1,72 @@
+.container {
+  width: 100%;
+  height: 100%;
+  margin-top: 0px;
+  padding: 0px;
+}
+.header {
+    margin-top: -2%;
+    /* The image used */
+    background-image: url("http://nebula.wsimg.com/abd7f73ada41c0aece5e7c2bbeda5272?AccessKeyId=A25421F4AA8D929DC055&disposition=0&alloworigin=1");
+
+    /* Set a specific height */
+    height: 1000px; 
+
+    /* Create the parallax scrolling effect */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    /*background-size: contain;*/
+}
+h1 {
+  padding-top: 1%;
+  font-family: 'Archivo Black', sans-serif;
+  margin-left: -65%;
+  color: white;
+  font-size: 50px;
+  text-shadow: 2px 2px 2px 2px black;
+}
+.login {
+  background-color: white;
+  height: 300px;
+  width: 400px;
+  margin-left: 35%;
+  border-radius: 5px;
+  margin-top: 5%;
+}
+.text {
+  font-family: 'Montserrat', sans-serif;
+  color: black;
+  font-size: 40px;
+  text-align: center;
+  padding-top: 5%;
+}
+ul {
+  color: white;
+  text-decoration: none;
+  margin-top: 2%;
+}
+li {
+  font-family: 'Montserrat', sans-serif;
+  color: white;
+  display: inline;
+  float: right;
+  margin-right: 10px;
+  font-size: 25px;
+  background-color: #201F1F;
+  text-decoration: none;
+  border-radius: 3px;
+  padding: 3px;
+}
+a {
+    color: white;
+    text-decoration: none;
+}
+li a:hover {
+    background-color: green;
+    color: white;
+    text-decoration: none;
+    border-radius: 3px;
+    padding: 3px;
+}

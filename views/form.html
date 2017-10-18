@@ -24,7 +24,7 @@
 </head>
 <body>
   <div class="container">
-    <div class="header">
+    <div class="parallaxHeader">
       <ul>
         <li><a href="">Connect</a></li>
         <li><a href="">Share</a></li>
@@ -35,11 +35,12 @@
       <h2>Add A Hike</h2>
       <!-- Create form to submit new hike -->
       <div class="square">
-        <form class="form" method="post" action="/hikes.geojson">
+        <form class="form" method="POST" action="/api/hikes">
           <!-- <legend>Deets</legend> -->
-          <input class="input" type="text" name="where" placeholder="Where?" /></br>
-          <input class="input" type="text" name="when" placeholder="When?" /></br>
-          <input class="input" type="text" name="who" placeholder="Who?" /></br>
+          <input class="input" type="text" name="name" placeholder="Hike Name:" /></br>
+          <input class="input" type="text" name="state" placeholder="State:" /></br>
+          <input class="input" type="text" name="date" placeholder="Date:" /></br>
+          <input class="input" type="text" name="time" placeholder="Time:" /></br>
           <input class="input submit" type="submit" name="submit" value="Submit" /></br>
         </form>  
         </div> 
