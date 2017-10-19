@@ -54,8 +54,8 @@ router.get('/discover-hikes', function (req, res) {
 });
 
 // the hike data on the map
-router.get('/hikes.geojson', function (req, res) {
-  res.sendFile('../hikes.geojson' , { root : __dirname});
+router.get('/discover-hikes', function (req, res) {
+  res.sendFile('./hikes.geojson' , { root : __dirname});
 });
 
 // Form.html
