@@ -29,6 +29,7 @@
   <div class="container">
     <div class="parallaxHeader">
       <ul>
+        <li><a href="/logout">Logout</a></li>
         <li><a href="">Connect</a></li>
         <li><a href="">Share</a></li>
         <li><a href="">Explore</a></li>
@@ -167,14 +168,12 @@
             },
           ]
         });
-
       // Create a <script> tag and set the USGS URL as the source.
         var script = document.createElement('script');
       // inserts my geoson data
-        script.src = '/hikes.geojson';
+        script.src = './hikes.geojson';
         document.getElementsByTagName('head')[0].appendChild(script);
       }
-
       window.eqfeed_callback = function(results) {
         for (var i = 0; i < results.features.length; i++) {
           var coords = results.features[i].geometry.coordinates;
@@ -188,7 +187,6 @@
         map.addListener('click', function (e) {
         placeMarkerAndPanTo(e.latLng, map);
         });
-
         function placeMarkerAndPanTo(latLng, map) {
           var marker = new google.maps.Marker({
           position: latLng,

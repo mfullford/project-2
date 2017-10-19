@@ -28,19 +28,26 @@ h1 {
   text-shadow: 2px 2px 2px 2px black;
 }
 .login {
-  background-color: white;
+  background-color:rgba(255,255,255, 0.7);
   height: 300px;
   width: 400px;
-  margin-left: 35%;
   border-radius: 5px;
-  margin-top: 5%;
+  margin-top: 8%;
+}
+#signup1 {
+  float: left;
+  margin-left: 15%;
+}
+#login1 {
+  float: right;
+  margin-right: 15%;
 }
 .text {
   font-family: 'Montserrat', sans-serif;
   color: black;
-  font-size: 40px;
+  font-size: 45px;
   text-align: center;
-  padding-top: 5%;
+  padding-top: 4%;
 }
 ul {
   color: white;
@@ -54,7 +61,7 @@ li {
   float: right;
   margin-right: 10px;
   font-size: 25px;
-  background-color: #201F1F;
+/*  background-color: #201F1F;*/
   text-decoration: none;
   border-radius: 3px;
   padding: 3px;
@@ -70,3 +77,28 @@ li a:hover {
     border-radius: 3px;
     padding: 3px;
 }
+#signup {
+  font-family: 'Montserrat', sans-serif;
+  color: black;
+  margin-left: 40%;
+  margin-top: 5%;
+  background-color: rgba(46, 119, 201, .9);
+}
+#login {
+  font-family: 'Montserrat', sans-serif;
+  color: black;
+  margin-left: 40%;
+  margin-top: 5%;
+  background-color: rgba(46, 119, 201, .9);
+}
+#password {
+  margin-left: 25%;
+  margin-top: 8%;
+  width: 50%;
+}
+#email {
+  margin-left: 25%;
+  margin-top: 8%;
+  width: 50%;
+}
+

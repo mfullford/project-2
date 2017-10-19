@@ -1,0 +1,41 @@
+<% include ./partials/landing-header.ejs %>
+
+      		<div class="login" id="signup1">
+            <% if (message.length > 0) { %>
+            <div class="alert alert-danger"><%= message %></div>
+            <% } %>
+
+            <p class="text">Signup</h1>
+          
+          <form method="post" action="/signup">
+            <div class="form-group">
+              <input class="form-control" type="text" placeholder="Email" name="email" id="email" class="formbox">
+            </div>
+
+            <div class="form-group">
+              <input class="form-control" type="password" placeholder="Password" name="password" id="password" class="formbox">
+            </div>
+              <input class="btn btn-default" type="submit" id="signup">
+            </form>
+
+            </div>
+
+            <div class="login" id="login1">
+
+            <p class="text">Login</p>
+					<form method="post" action="/login">
+				  <div class="form-group">
+				    <input class="form-control" type="text" name="email" id="email" placeholder="Email">
+				  </div>
+
+				  <div class="form-group">
+				    <input class="form-control" type="password" name="password" id="password" placeholder="Password">
+				  </div>
+				  <input class="btn btn-default" type="submit" id="login">
+				</form>
+      		</div>
+		</div>
+	</div>
+</body>
+
+<% include ./partials/landing-footer.ejs %>
