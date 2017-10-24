@@ -1,0 +1,201 @@
+.container {
+  width: 100%;
+  height: 100%;
+  margin-top: 0px;
+  padding: 0px;
+}
+h1 {
+  font-family: 'Archivo Black', sans-serif;
+  color: white;
+  text-align: center;
+  padding-top: 21%;
+  font-size: 80px;
+  text-shadow: 2px 2px 2px 2px black;
+}
+h2{
+  font-family: 'Montserrat', sans-serif;
+  color: black;
+  font-size: 40px;
+  text-align: center;
+  margin-top: 40px;
+  padding-top: 10px;
+  padding-left: 10px
+  padding-right: 10px;
+  padding-bottom: 1px;
+}
+.parallaxHeader { 
+    /* The image used */
+    background-image: url("http://nebula.wsimg.com/abd7f73ada41c0aece5e7c2bbeda5272?AccessKeyId=A25421F4AA8D929DC055&disposition=0&alloworigin=1");
+
+    /* Set a specific height */
+    height: 500px; 
+
+    /* Create the parallax scrolling effect */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    /*background-size: contain;*/
+    margin-top: -5%;
+}
+ul {
+  color: white;
+  text-decoration: none;
+}
+li {
+  font-family: 'Montserrat', sans-serif;
+  color: white;
+  display: inline;
+  float: right;
+  margin-right: 5px;
+  padding-top: 2%;
+  padding-left: 2%;
+  font-size: 25px;
+}
+a {
+    color: white;
+    text-decoration: none;
+}
+li a:hover {
+    background-color: #201F1F;
+    color: white;
+    text-decoration: none;
+    border-radius: 3px;
+    padding: 3px;
+}
+
+.map-and-info {
+	width: 100%;
+	height: 500px;
+}
+
+#map {
+	float: right;
+	height: 500px;
+	width: 750px;
+	margin-right: 4%;
+/*	margin-top: -42%;*/
+	border-radius: 3px;
+	border: 2px black solid;
+	margin-bottom: 5%;
+}
+.input {
+  font-family: 'Montserrat', sans-serif;
+  width: 60%;
+  height: 25%;
+  padding: 5px;
+  font-size: 40%;
+  margin-top: 5%;
+  margin-left: 5%;
+  margin-bottom: 2%;
+  border-radius: 3px;
+  border-style: none;
+}
+.submit {
+  font-family: 'Montserrat', sans-serif;
+  color: black;
+  width: 30%;
+  height: 50%;
+  margin-left: 2%;
+  font-size: 50%;
+  font-weight: large;
+  margin-top: -2%;
+  background-color: rgba(46, 119, 201, .9);
+  margin-bottom: 2%;
+  border-radius: 3px;
+  border-style: none;
+}
+.submit:hover {
+  color: white;
+  background-color: black;
+  margin-top: -2%;
+}
+.square {
+  background-image: url("http://catchcarri.com/wp-content/uploads/2013/09/Frank_6304221409.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-opacity: 0.5;
+  width: 100%;
+  margin-left: 5%;
+  text-align: center;
+  border-radius: 5px;
+}
+.form {
+  float: left;
+  width: 30%;
+  padding: 5px;
+/*  margin-top: 40%;*/
+  margin-bottom: 5%;
+  margin-left: 4%;
+}
+/*box for all the hikes */
+.oneHike {
+	text-decoration: none;
+	width: 30%;
+	height: 200px;
+	font-size: 20px;
+  display: inline-box;
+  float: left;
+  margin-right: 2%;
+  padding-top: 0px;
+  margin-bottom: 0px;
+  	background-color: rgba(46, 119, 201, .9);
+  	  border-radius: 5px;
+}
+
+/*each hike*/
+#hikeBox {
+	width: 100%;
+	height: 200px;
+	border-radius: 3px;
+   	color: white;
+    float: right;
+    margin-top: 1%;
+    margin-bottom: 10%;
+}
+
+/*Buttons*/
+.hikebuttons {
+	width: 30%;
+	font-family: 'Montserrat', sans-serif;
+  color: black;
+  font-size: 40%;
+  font-weight: large;
+  border: none;
+  border-radius: 3px;
+/*  vertical-align: bottom;*/
+  padding: 5px; 
+  display: inline;
+}
+#editbutton {
+/*	float: left;*/
+	background-color: green;
+	margin-left: 15%;
+	margin-right: 2%;
+	  margin-top: 15%;
+/*	margin-top: -100%;*/
+font-family: 'Montserrat', sans-serif;
+  color: black;
+  font-size: 200%;
+  font-weight: large;
+  border: none;
+  border-radius: 3px;
+  width: 30%;
+  float: left;
+}
+
+#deletebutton {
+	background-color: red;
+/*	float: right;*/
+	margin-right: -25%;
+	margin-left: 5%;
+	width: 30%;
+	font-family: 'Montserrat', sans-serif;
+  color: black;
+  font-size: 200%;
+  font-weight: large;
+  border: none;
+  border-radius: 3px;
+  float: right;
+    margin-top: 15%;
+}

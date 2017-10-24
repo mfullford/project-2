@@ -38,7 +38,14 @@ function getLogout(request, response, next) {
 	response.redirect('/');
 }
 
+// GET user 
+function getUser(request, response) {
+    if (request.user) { response.send(request.user._id); }
+    else { response.send("Failed"); }
+}
+
 module.exports = {
+  getUser: getUser,
   getLogin: getLogin,
   postLogin: postLogin ,
   getSignup: getSignup,

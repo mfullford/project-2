@@ -28,18 +28,17 @@
       <ul>
         <li><a href="/logout">Logout</a></li>
         <li><a href="">Connect</a></li>
-        <li><a href="">Share</a></li>
-        <li><a href="main.ejs">Explore</a></li>
+        <li><a href="/main.ejs">Explore</a></li>
       </ul>
         <h1 class="text-center">Hiking Squad</h1>
       </div>
       <h2>Add A Hike</h2>
       <!-- Create form to submit new hike -->
       <div class="square">
-        <form class="form" method="POST" action="/api/hikes">
+        <form class="form" method="POST" action="/api/hikes" id="hike-form">
           <!-- <legend>Deets</legend> -->
           <input class="input" type="text" name="name" placeholder="Hike Name:" /></br>
-          <input class="input" type="text" name="state" placeholder="State:" /></br>
+          <input class="input" type="text" name="state" placeholder="Location (Lat,Long):" /></br>
           <input class="input" type="text" name="date" placeholder="Date:" /></br>
           <input class="input" type="text" name="time" placeholder="Time:" /></br>
           <input class="input submit" type="submit" name="submit" value="Submit" /></br>

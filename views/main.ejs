@@ -30,9 +30,8 @@
     <div class="parallaxHeader">
       <ul>
         <li><a href="/logout">Logout</a></li>
-        <li><a href="">Connect</a></li>
-        <li><a href="">Share</a></li>
-        <li><a href="">Explore</a></li>
+        <li><a href="/user">My Hikes</a></li>
+        <li><a href="/main">Explore</a></li>
       </ul>
       <h1 class="text-center">Hike Squad</h1>
     </div>
@@ -44,21 +43,17 @@
       <img class="mountain" src="https://bouldercounty.files.wordpress.com/2015/10/colorado-rocky-mountain-autumn-season-beauty-900.jpg?w=604&h=403" alt="Mountains">
       </div>
       <!-- Detailed info  -->
-      <div class="explain">
-        <h2>Get Connected</h2>
-        <p>Check out the hikes in your area by exploring this map! Or you can add a new hike by clicking <a id="formButton" href="/form">here!</a></p>
-      </div>
       <!-- Creates the actual Google map -->
-  <div id="map"></div>
-    <script>
+      <div id="map"></div>
+          <script>
 
- function initMap() {
+          function initMap() {
 
 
 
         map = new google.maps.Map(document.getElementById('map'), {
           zoom: 4,
-          center: new google.maps.LatLng(39.7392,-104.9903),
+          center: new google.maps.LatLng(39.7392,-95.9903),
           styles: [
             {elementType: 'geometry', stylers: [{color: '#eccf81'}]},
             {elementType: 'labels.text.stroke', stylers: [{color: '#f5f1e6'}]},
@@ -189,7 +184,26 @@
           });
         }
       
+var geocoder = new google.maps.Geocoder();
 
+        document.getElementById('submit').addEventListener('click', function() {
+          geocodeAddress(geocoder, map);
+        });
+      }
+
+      function geocodeAddress(geocoder, resultsMap) {
+        var address = document.getElementById('address').value;
+        geocoder.geocode({'address': address}, function(results, status) {
+          if (status === 'OK') {
+            resultsMap.setCenter(results[0].geometry.location);
+            var marker = new google.maps.Marker({
+              map: resultsMap,
+              position: results[0].geometry.location
+            });
+          } else {
+            alert('Geocode was not successful for the following reason: ' + status);
+          }
+        });
 
   map.event.addListener(marker, "click", (function(marker) {
   return function(evt) {
@@ -230,6 +244,10 @@
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDkVV9oxUvanUOsvlHPAVp9ru6wf-ZysNY&callback=initMap">
     </script>
     </div>
+          <div class="explain">
+        <h2>Get Connected</h2>
+        <p>Check out the hikes in your area by exploring this map! Or you can add a new hike by clicking <a id="formButton" href="/user">here!</a></p>
+      </div>
     });
 </body>
 </html>
