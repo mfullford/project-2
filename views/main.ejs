@@ -30,8 +30,8 @@
     <div class="parallaxHeader">
       <ul>
         <li><a href="/logout">Logout</a></li>
-        <li><a href="/user">My Hikes</a></li>
-        <li><a href="/main">Explore</a></li>
+        <li><a href="/user">Hikes</a></li>
+        <li><a href="/discover-hikes">Explore</a></li>
       </ul>
       <h1 class="text-center">Hike Squad</h1>
     </div>
@@ -42,7 +42,6 @@
       <img class="hill" src="https://i.redd.it/d9nvcqhkcznx.jpg" alt="Hill">
       <img class="mountain" src="https://bouldercounty.files.wordpress.com/2015/10/colorado-rocky-mountain-autumn-season-beauty-900.jpg?w=604&h=403" alt="Mountains">
       </div>
-      <!-- Detailed info  -->
       <!-- Creates the actual Google map -->
       <div id="map"></div>
           <script>
@@ -220,7 +219,6 @@ var geocoder = new google.maps.Geocoder();
     });
     map.PanTo(latLng);
   }
-
 }
       
     </script>

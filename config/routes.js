@@ -61,11 +61,6 @@ router.route('/discover-hikes')
 router.route('/user/getID')
   .get(usersController.getUser);
 
-  // Require all the routes
-// let routes = require('./config/routes');
-// app.use(routes);
-
-
 
 /**********
  * HIKES *
@@ -99,15 +94,6 @@ router.get('/user/hikes', function(req, res) {
         else res.json(hikes);
     });
 });
-
-// //GET user page
-// router.get('/user', function (req, res) {
-//   res.render('../views/user.ejs' , { root : __dirname});
-// });
-
-// router.post('/user', function (req, res) {
-//   res.render('../views/user.ejs' , { root : __dirname});
-// });
 
 
 // ajax to express route to mongo to the database
@@ -151,26 +137,5 @@ router.delete('/user/hikes/:id', function(req, res) {
     res.json(deletedHike);
   });
 });
-
-
-
-
-
-// --------**** Hikes ****---------- //
-
-
-// // SHOW
-// router.route('/api/places/:place_id/hikes/:hike_id')
-//   .get(placesController.getHike);
-
-// // UPDATE
-// router.route('/api/places/:place_id/hikes/:hike_id')
-//   .put(authenticatedUser, placesController.updateHike);
-
-// // DELETE
-// router.route('/api/places/:place_id/hikes/:hike_id')
-//   .delete(authenticatedUser, placesController.removeHike);
-
-
   
 module.exports = router;

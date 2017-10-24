@@ -48,7 +48,7 @@ function getUser(request, response) {
 module.exports = {
   getUser: getUser,
   getLogin: getLogin,
-  postLogin: postLogin ,
+  postLogin: postLogin,
   getSignup: getSignup,
   postSignup: postSignup,
   getLogout: getLogout

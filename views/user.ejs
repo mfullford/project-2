@@ -9,9 +9,6 @@
   <link href="https://fonts.googleapis.com/css?family=Archivo+Black" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600" rel="stylesheet">
 
-    <!--Icon link -->
-<!--   <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css"> -->
-
 <!--     JQUERY and Handlebar -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.5/handlebars.min.js"></script> 
@@ -25,7 +22,7 @@
       <ul>
         <li><a href="/logout">Logout</a></li>
         <li><a href="/user">Hikes</a></li>
-        <li><a href="/main">Explore</a></li>
+        <li><a href="/discover-hikes">Explore</a></li>
       </ul>
         <h1 class="text-center">Hiking Squad</h1>
       </div>
@@ -36,13 +33,6 @@
 
   <h2> Hikes </h2>
 
- <!--  <div class="listMyHikes">
-        <div class ="row" id="allhikes">
-          <!hikes! -->
-            
- <!--  </div>
-</div> --> 
-
 <div class ="listMyHikes" id="hikeBox">
         <!-- create handlebars template -->
     <script id="hike-template" type="text/x-handlebars-template">
@@ -51,16 +41,14 @@
       <ul class = 'hikeCard' style='list-style-type:none'>
         <li class="newCard"><span class='hikeName'>Name: {{name}}</span></li>
         <li class="newCard"><span class='hikeState'>State: {{state}}</span></li>
-<!--         <li class="newCard"><span class='hikeLong'>Long/Lat: {{longlat}}</span></li> -->
         <li class="newCard"><span class='hikeDate'>Date: {{date}}</span></li>
         <li class="newCard"><span class='hikeTime'>Time: {{time}}</span></li>
       </ul>
         <div id='hikes'>
         </div>
-      <!-- <div class='btn-group hikebuttons'> -->
+     
         <button type='button' id='deletebutton' data-id={{_id}}>Delete</button>
         <button type='button' id='editbutton' data-id={{_id}}>Edit</button>
-        <!-- Modal for Edit button -->
 
 
     <div class="modal fade" tabindex="-1" role="dialog" id="hikeModal" hidden="true">
@@ -77,7 +65,6 @@
             <div class="form-group" id="edit-hike">
                       <input type="text" class="input nope" placeholder="Enter New Hike Name" name="name" id="name">
                       <input type="text" class="input nope" placeholder="Enter New State" name="state" id="state">
-<!--                       <input type="text" class="input nope" placeholder="Enter the Longitude/Latitude" name="longlat" id="longlat"> -->
                       <input type="text" class="input nope" placeholder="Enter New Date" name="date" id="date">
                       <input type="text" class="input nope" placeholder="Enter New Time" name="time" id="time">
             </div>            
@@ -88,51 +75,10 @@
         </div>
       </div>
     </div>
-<!-- </div> -->
+</div>
 {{/each}}
 </script>
 </div>
-
-
-<!--             <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" hidden="true">
-                <div class="modal-dialog">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <!<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button> -->
-                            <!-- <h2 class="modal-title" id="myModalLabel">Edit Hike</h2>
-                        </div>
-                        <form method="PUT" action="/user/hikes/:id">
-                            <div class="modal-body">
-                                <div class="input">
-                                    <input class="form-control business_skill_id" type="hidden" name="name">
-                                    <input id="hike_content" name="name" placeholder="Enter Name">
-                                </div>
-                                <div class="input">
-                                    <input class="form-control business_skill_content" type="hidden" name="state">
-                                    <input id="hike_content"  name="content" placeholder="Enter State">
-                                </div>
-                                <div class="input">
-                                    <input class="form-control business_skill_content" type="hidden" name="date">
-                                    <input id="hike_content"  name="content" placeholder="Enter Date">
-                                </div>
-                                <div class="input">
-                                    <input class="form-control business_skill_quote" type="hidden" name="time">
-                                    <input id="hike_content" name="content" placeholder="Enter Time">
-                                </div>
-                            </div>
-                            <div class="modal-footer">
-                                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                                <button type="submit" class="btn btn-primary">Save changes</button>
-                            </div>
-                        </form>
-                    </div>
-                </div>
-            </div> -->
-<!--       </div> -->
-   <!--  </div> -->
-<!--     {{/each}}
-    </script> -->
-
 
         <!-- Form to submit for a new hike -->
         <div class="form">
@@ -141,10 +87,9 @@
               <h2>Create a New Hike</h2>
             <input class="input" type="text" placeholder="What is the name of the hike?" name="name"><br>
             <input class="input" type="text" placeholder="Which state is it in?" name="state"><br>
-<!--             <input class="input" type="text" placeholder="What is it the longitude & latitude (use map)?" name="longlat"><br> -->
             <input class="input" type="text" placeholder="What is the date of the hike?" name="date"><br>
             <input class="input" type="text" placeholder="What time is it?" name="time"><br>
-            <input class="submit" type="submit" name="submit" value="Submit" /></br>
+            <input class="submit" type="submit" name="submit" value="Submit"></br>
           </form>
         </div>
     </div>

@@ -16,7 +16,6 @@
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    /*background-size: contain;*/
     margin-top: -20px;
 }
 ul {
@@ -43,15 +42,6 @@ li a:hover {
     border-radius: 3px;
     padding: 3px;
 }
-/*.header {
-    background-image: url("http://nebula.wsimg.com/abd7f73ada41c0aece5e7c2bbeda5272?AccessKeyId=A25421F4AA8D929DC055&disposition=0&alloworigin=1");
-    background-repeat: no-repeat;
-    /*background-size: contain;*/
-/*    height: 500px;
-    background-size: 100% 100%;
-    margin-top: -10px;
-    text-align: center;
-}*/
 h1 {
   font-family: 'Archivo Black', sans-serif;
   color: white;
@@ -97,21 +87,6 @@ h2{
   margin-left: 1%;
   margin-right: 2%;
 }
-/*.parallaxMap { 
-    /* The image used */
-/*    background-image: url("http://www.solidbackgrounds.com/images/2560x1440/2560x1440-black-solid-color-background.jpg");
-
-    /* Set a specific height */
-   /* height: 500px;
-    width: 1000px; 
-
-     Create the parallax scrolling effect 
-    background-attachment: fixed;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    /*background-size: contain;*/
-    /*margin-top: -10px;*/
 .explain {
   font-size: 150%;
   width: 25%;
@@ -126,7 +101,6 @@ p {
 }
 #map {
     margin-top: 27%;
-/*    margin-left: 25%;*/
     margin-left: 15%;
     margin-bottom: 5%;
     height: 70%;
@@ -141,17 +115,16 @@ html, body {
     padding: 0;
 }
 
-/*     Form HTML*/
+/* Form HTML*/
 
 .form {
   width: 30%;
   padding: 5px;
-/*  margin-left: 40%;*/
   margin-top: 5%;
   margin-bottom: 5%;
   border-radius: 5px;
 }
-
+/*Style the background of the form*/
 .square {
   background-image: url("http://catchcarri.com/wp-content/uploads/2013/09/Frank_6304221409.jpg");
   background-size: cover;

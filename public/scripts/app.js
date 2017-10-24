@@ -167,72 +167,13 @@ function initMap() {
 
 $(document).ready(function() {
 
+// define variables 
 let name;
 let state;
 // let longlat;
 let time;
 let date;
 
-      //Submit form - add to db
-  // $('#hike-form').submit(function(event) {
-  //   event.preventDefault();
-  //   var formData = $(this).serialize();
-  //   console.log(formData);
-  //   $.post('/user/hikes', formData, function(hike) {
-  //     renderNewHike(hike);
-  //     console.log(hike);
-  //   });
-  //   $(this).trigger("reset");
-  // });
-
-  //   // render NewHike
-  // function renderNewHike(hike) {
-  //   console.log('rendering hike ' + hike);
-  //   userHikes.push(hike);
-
-//     var hikeHtml =
-//           "<div id ='onehike'>"+
-// "         <div class ='box' data-id='" +hike._id+ "'>"+
-//           //List that populates from form
-// "           <ul class = 'newhikebox'>"+
-// "             <li><class='hikename line'>Name: "+hike.name+"</li>"+
-// "             <li><class='hikestate line'>State: "+hike.state+"</li>"+
-// "             <li><class='hikedate line'>Date: "+hike.date+"</li>"+
-// "             <li><class='hiketime line'>Time: "+hike.time+"</li>"+
-// "           </ul>"+
-//           //buttons that populate on each hike box
-//       "<div class='btn-group' data-toggle='buttons'>"+    
-//           "<button type='button' class='hikebuttons' id='editbutton' data-id='" +hike._id+"'>Edit</button>"+      
-//           "<button type='button' class='hikebuttons' id='deletebutton' data-id='" +hike._id+"'>Delete</button>"+
-//       "</div>"+
-//  "</div>"+
-//     "</div>";
-
-//     $('#hikes').append(hikeHtml);
-   
-
-//   //Delete back end
-//   $('#deletebutton').click(function() {
-//     let id= $(this).data('id');
-//     $.ajax({
-//       method: 'DELETE',
-//       url: '/user/hikes'+id,
-//       success: deleteHike
-//     });
-//   });
-
-//   //Delete front end
-//   function deleteHike(deletedHike) {
-//     let oneHike = deletedHike;
-//     let hikeId = deletedHike._id;
-//     for(let i=0; i< userHikes.length; i++) {
-//       if(userHikes[i]._id === hikeId) {
-//         userHikes.splice(i, 1);
-//         break;
-//       }
-//     }
-//     render();
-//   }
 
 // Get the ID of the user
  $.ajax({
@@ -243,7 +184,6 @@ let date;
     }
   });
 
-// 
   $hikeBox = $('#hikeBox');
 
   //compile handlebars template
@@ -259,7 +199,7 @@ let date;
       error: handleError
     });
 
-      //When a new trip is submitted via form
+      //When a new hike form is submitted
     $('#hike-form').on('submit', function(event) {
       event.preventDefault();
       console.log('new hike serialized', $(this).serialize());
@@ -272,7 +212,7 @@ let date;
       });
     });
 
-      //When a tripcard delete button is clicked
+      //When a the hike delete button is clicked
     $hikeBox.on('click', '#deletebutton', function() {
       console.log('clicked delete button for ' +$(this).attr('data-id'));
       let id = $(this).attr('data-id');
@@ -285,39 +225,21 @@ let date;
     });
 });
 
-// $(document).on( "click", '#editbutton',function(e) {
-//     e.preventDefault();
-//     let id = $(this).attr('data-id');
-//     var name = $(this).data('name');
-//     var state = $(this).data('state');
-//     var date = $(this).data('date');
-//     var time = $(this).data('time');
 
-//     var dataForm = 'name=' + name + '&state=' + state + '&date=' + date + '&time=' + time;
-
-// $.ajax({
-//     type: 'POST',
-//     url: '/user/hikes/',
-//     data: dataForm,
-//     success: function(html){
-//         if(html == "success"){
-//             $('#hikes').dataTable().reload();
-//             $('#editModal').modal('toggle');
-//         }
-//     }
-//     });   
-// });
 let id;
 
+// Click edit button
 $(document).on('click', '#editbutton', function() {
     id = $(this).attr('data-id');
     hikeId = $(this).attr('id');
     $('#edit-hike').val("Make edits");
+    // make html modal appear
     $('#hikeModal').modal();
   });
 
 $(document).on('click', '#saveButton', function() {
 
+// make the new variables = the old variables
   name = $('#name').val();
   state = $('#state').val();
   longlat = $('#longlat').val();
@@ -327,16 +249,13 @@ $(document).on('click', '#saveButton', function() {
   console.log("Clicked!");
     // let id = $(this).attr('data-id');
     console.log(id);
-    // hikeId = $(this).attr('id');
     let editedHike = $('#edit-hike').val();
     $.ajax({
       type: 'put',
       url: '/user/hikes/:id',
       data:({ id: id,
-              // editedHike: editedHike,
               name: name,
               state: state,
-              // longlat: longlat,
               date: date,
               time: time
                })
@@ -345,24 +264,9 @@ $(document).on('click', '#saveButton', function() {
     $('#hikeModal').modal('hide');
   });
 
-// $('#saveButton').on('click', function() {
-//     console.log("Clicked");
-//     let editedHike = $('#edit-hike').val();
-//     let hikeId = $(this).attr('id');
-//     $.ajax({
-//       type: 'put',
-//       url: '/user/hikes/',
-//       data:({ hikeId: hikeId,
-//               editedHike: editedHike })
-//     });
+}; // Document ready function
 
-  //   alert("Saved!");
-  //   $('#hikeModal').modal('hide');
-  // });
-
-}; // Document ready function done
-
-  // helper function to render all posts to view, it re-renders each time we call it
+  // Render all posts to view, re-resenders every time
   function render () {
     $hikeBox.empty(); // empty existing posts from view
     let hikeHtml = template({ hike: userHikes });   // pass the user trips into the handlebars template
@@ -376,7 +280,7 @@ $(document).on('click', '#saveButton', function() {
 
   function handleError(e) {
     console.log('Something went wrong getting all hikes.');
-    $('#hikeBox').text('Failed to load hikes, is the server working?');
+    $('#hikeBox').text('Failure loading hikes, is the server working?');
   }
 
   function newHikeSuccess(hike) {

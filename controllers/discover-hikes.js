@@ -85,8 +85,6 @@ function updateHike(req, res, next) {
 	 	console.log(changedHike);
  		changedHike.name = req.body.name;
  		changedHike.state = req.body.state;
- 		// changedHike.longlat = req.body.longlat;
- 		// console.log(longlat);
  		changedHike.date = req.body.date;
  		changedHike.time = req.body.time
  		changedHike.save();
