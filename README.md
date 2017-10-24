@@ -87,13 +87,17 @@ eqfeed_callback (
 
 ### Challenges and Stretch Goals
 
-I quickly found out it was harder than I thought to route the form submissions to the geo.json data and then route that all the way back to the map. My stretch goals would be to get this working, but in the mean time I used html forms and modals to create group hikes that the user can see and edit. I used passport for the login - using authentication the user cna login to my app and see the hikes. My routes were pretty tricky, but I exported my models without any difficulty. A user can get the hike with the hikeID, create a new hike, edit a hike, and delete a hike.
+I quickly found out it was harder than I thought to route the form submissions to the geo.json data and then route that all the way back to the map. My stretch goals would be to get this working, but in the mean time I used html forms and modals to create group hikes that the user can see and edit. I used passport for the login - using authentication the user can login to my app and see the hikes. My routes were pretty tricky, but I exported my models without any difficulty. A user can get the hike with the hikeID, create a new hike, edit a hike, and delete a hike.
 
 I played with Sass for my styling. I used chai to test my API (**shocking Google Maps worked**).
 
+### Deployment
+
 My project is deployed on [heroku](https://fierce-fjord-94955.herokuapp.com/discover-hikes). 
 
-Shout out to my lessons in cartography for helping me along with this project. 
+### Fin
+
+Shout out to my lessons in cartography for helping me along with this project. I was about as lost as Buster was when I started trying to figure this out, but now I feel like I understand routes and controllers A LOT BETTER
 
 ![buster-bluepart](https://user-images.githubusercontent.com/31824846/31956373-8096fcd8-b8a8-11e7-9b18-f5e94dd86084.gif)
 
