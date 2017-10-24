@@ -1,3 +1,6 @@
+$background-color: rgba(46, 119, 201, .9);
+$font-stack: 'Montserrat', sans-serif;
+
 .container {
   width: 100%;
   height: 100%;
@@ -43,7 +46,7 @@ ul {
   text-decoration: none;
 }
 li {
-  font-family: 'Montserrat', sans-serif;
+  font-family: ;
   color: white;
   display: inline;
   float: right;
@@ -74,11 +77,11 @@ li a:hover {
 	margin-bottom: 5%;
 }
 .input {
-  font-family: 'Montserrat', sans-serif;
+  font-family: $font-stack;
   width: 60%;
   height: 25%;
   padding: 5px;
-  font-size: 80%;
+  font-size: 40%;
   margin-top: 5%;
   margin-left: 5%;
   margin-bottom: 2%;
@@ -86,22 +89,23 @@ li a:hover {
   border-style: none;
 }
 .submit {
-  font-family: 'Montserrat', sans-serif;
+  font-family: $font-stack;
   color: black;
   width: 30%;
-  height: 100%;
+  height: 50%;
   margin-left: 2%;
-  font-size: 90%;
+  font-size: 50%;
   font-weight: large;
-  margin-top: 5%;
-  background-color: rgba(46, 119, 201, .9);
-  margin-bottom: 5%;
+  margin-top: -2%;
+  background-color: $background-color;
+  margin-bottom: 2%;
   border-radius: 3px;
   border-style: none;
 }
 .submit:hover {
   color: white;
   background-color: black;
+  margin-top: -2%;
 }
 .square {
   background-image: url("http://catchcarri.com/wp-content/uploads/2013/09/Frank_6304221409.jpg");
@@ -124,43 +128,33 @@ li a:hover {
 /*box for all the hikes */
 .oneHike {
 	text-decoration: none;
-	width: 250px;
+	width: 30%;
 	height: 200px;
 	font-size: 20px;
-  display: flex;
-  flex-flow: column wrap;
+  display: inline-box;
   float: left;
   margin-right: 2%;
-  margin-left: 2%;
   padding-top: 0px;
-  	background-color: rgba(46, 119, 201, .9);
+  margin-bottom: 0px;
+  	background-color: $background-color;
   	  border-radius: 5px;
 }
 
 /*each hike*/
 #hikeBox {
 	width: 100%;
-/*	height: 200px;*/
+	height: 200px;
 	border-radius: 3px;
    	color: white;
-    float: left;
+    float: right;
     margin-top: 1%;
     margin-bottom: 10%;
 }
-.hikeCard {
-	padding: 2px;
-	font-size: 20px;
-	padding-right: 2px;
-	margin-top: 2px;
-	width: 250px;
-	float: left;
-}
+
 /*Buttons*/
 .hikebuttons {
-	width: 50%;
-	height: 30%;
-	margin-top: 145px;
-	font-family: 'Montserrat', sans-serif;
+	width: 30%;
+	font-family: $font-stack;
   color: black;
   font-size: 40%;
   font-weight: large;
@@ -169,36 +163,35 @@ li a:hover {
 /*  vertical-align: bottom;*/
   padding: 5px; 
   display: inline;
-}
-#editbutton {
-/*	float: left;*/
-	background-color: green;
-	margin-left: -190%;
-	margin-right: 2%;
-	margin-top: 15%;
-/*	margin-top: -100%;*/
-font-family: 'Montserrat', sans-serif;
-  color: black;
-  font-size: 200%;
-  font-weight: large;
-  border: none;
-  border-radius: 3px;
-  width: 75%;
-  float: left;
-}
 
-#deletebutton {
-	background-color: red;
-/*	float: right;*/
-	margin-right: 115%;
-	margin-left: -180%;
-	width: 75%;
-	font-family: 'Montserrat', sans-serif;
-	color: black;
-	font-size: 200%;
-	font-weight: large;
-	border: none;
-	border-radius: 3px;
-	float: right;
-	margin-top: 15%;
-}
+		#editbutton {
+		/*	float: left;*/
+			background-color: green;
+			margin-left: 15%;
+			margin-right: 2%;
+			  margin-top: 15%;
+		/*	margin-top: -100%;*/
+		font-family: $font-stack;
+		  color: black;
+		  font-size: 200%;
+		  font-weight: large;
+		  border: none;
+		  border-radius: 3px;
+		  width: 30%;
+		  float: left;
+		}
+		
+		#deletebutton {
+			background-color: red;
+		/*	float: right;*/
+			margin-right: -25%;
+			margin-left: 5%;
+			width: 30%;
+			font-family: $font-stack;
+			font-size: 200%;
+			font-weight: large;
+			border: none;
+			border-radius: 3px;
+			float: right;
+			margin-top: 15%;
+		}

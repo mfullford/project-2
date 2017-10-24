@@ -34,7 +34,7 @@
       </nav>
   </div>
 
-  <h2> My Hikes <h2>
+  <h2> My Hikes </h2>
 
  <!--  <div class="listMyHikes">
         <div class ="row" id="allhikes">
@@ -56,16 +56,49 @@
       </ul>
         <div id='hikes'>
         </div>
-      <div class='btn-group hikebuttons'>
+      <!-- <div class='btn-group hikebuttons'> -->
         <button type='button' id='deletebutton' data-id={{_id}}>Delete</button>
         <button type='button' id='editbutton' data-id={{_id}}>Edit</button>
         <!-- Modal for Edit button -->
-            <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" hidden="true">
+
+
+    <div class="modal fade" tabindex="-1" role="dialog" id="commentModal" hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content content-box">
+
+          <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+            <h2 class="modal-title sub-header">Edit Hike</h2>
+          </div>
+          <div class="modal-body">
+            <div class="form-group" id="edit-hike">
+                      <li class="newCard"><span class='hikeName input'>Enter name: {{name}}</span></li>
+                      <li class="newCard"><span class='hikeState input'>Enter State: {{state}}</span></li>
+                      <li class="newCard"><span class='hikeDate input'>Enter date: {{date}}</span></li>
+                      <li class="newCard"><span class='hikeTime input'>Enter time: {{time}}</span></li>
+            </div>            
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-primary" id="save-comment-button">Save changes</button>
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+<!-- </div> -->
+{{/each}}
+</script>
+</div>
+
+
+<!--             <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" hidden="true">
                 <div class="modal-dialog">
                     <div class="modal-content">
                         <div class="modal-header">
-                            <!-- <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button> -->
-                            <h2 class="modal-title" id="myModalLabel">Edit Hike</h2>
+                            <!<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button> -->
+                            <!-- <h2 class="modal-title" id="myModalLabel">Edit Hike</h2>
                         </div>
                         <form method="PUT" action="/user/hikes/:id">
                             <div class="modal-body">
@@ -93,12 +126,12 @@
                         </form>
                     </div>
                 </div>
-            </div>
-      </div>
-    </div>
-    {{/each}}
-    </script>
-</div>
+            </div> -->
+<!--       </div> -->
+   <!--  </div> -->
+<!--     {{/each}}
+    </script> -->
+
 
         <!-- Form to submit for a new hike -->
         <div class="form">

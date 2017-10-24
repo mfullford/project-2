@@ -277,28 +277,33 @@ $(document).ready(function() {
     });
 });
 
-$(document).on( "click", '#editbutton',function(e) {
-    e.preventDefault();
-    let id = $(this).attr('data-id');
-    var name = $(this).data('name');
-    var state = $(this).data('state');
-    var date = $(this).data('date');
-    var time = $(this).data('time');
+// $(document).on( "click", '#editbutton',function(e) {
+//     e.preventDefault();
+//     let id = $(this).attr('data-id');
+//     var name = $(this).data('name');
+//     var state = $(this).data('state');
+//     var date = $(this).data('date');
+//     var time = $(this).data('time');
 
-    var dataForm = 'name=' + name + '&state=' + state + '&date=' + date + '&time=' + time;
+//     var dataForm = 'name=' + name + '&state=' + state + '&date=' + date + '&time=' + time;
 
-$.ajax({
-    type: 'POST',
-    url: '/user/hikes/',
-    data: dataForm,
-    success: function(html){
-        if(html == "success"){
-            $('#hikes').dataTable().reload();
-            $('#editModal').modal('toggle');
-        }
-    }
-    });   
-});
+// $.ajax({
+//     type: 'POST',
+//     url: '/user/hikes/',
+//     data: dataForm,
+//     success: function(html){
+//         if(html == "success"){
+//             $('#hikes').dataTable().reload();
+//             $('#editModal').modal('toggle');
+//         }
+//     }
+//     });   
+// });
+$(document).on('click', '#editbutton', function() {
+    hikeId = $(this).attr('id');
+    $('#edit-hike').val("Please Enter Your Changes or Delete Comment");
+    $('#commentModal').modal();
+  });
 }; // Document ready function done
 
   // helper function to render all posts to view, it re-renders each time we call it
