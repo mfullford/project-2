@@ -8,16 +8,13 @@
     margin-top: -2%;
     /* The image used */
     background-image: url("http://nebula.wsimg.com/abd7f73ada41c0aece5e7c2bbeda5272?AccessKeyId=A25421F4AA8D929DC055&disposition=0&alloworigin=1");
-
     /* Set a specific height */
     height: 1000px; 
-
     /* Create the parallax scrolling effect */
     background-attachment: fixed;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    /*background-size: contain;*/
 }
 h1 {
   padding-top: 1%;
@@ -61,7 +58,6 @@ li {
   float: right;
   margin-right: 10px;
   font-size: 25px;
-/*  background-color: #201F1F;*/
   text-decoration: none;
   border-radius: 3px;
   padding: 3px;

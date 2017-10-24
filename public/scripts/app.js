@@ -1,6 +1,9 @@
+// Create an empty Array for the hikes of a user
 let userHikes = [];
+// Call userID
 let userId;
-let $tripcards;
+// 
+let $hikeBox;
 let template;
 
 function initMap() {

@@ -3,7 +3,7 @@ var mongoose = require("mongoose");
 // create schema variable
 var Schema = mongoose.Schema;
 
-
+// Create hike schema
 let hikeSchema = new Schema({
 	name: String,
 	state: String,

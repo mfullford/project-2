@@ -44,6 +44,7 @@ function getUser(request, response) {
     else { response.send("Failed"); }
 }
 
+// EXPORT all the functions
 module.exports = {
   getUser: getUser,
   getLogin: getLogin,

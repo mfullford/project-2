@@ -32,8 +32,9 @@ function authenticatedUser(req, res, next) {
   res.redirect('/');
 }
 
-
-// ----**** USER ****----- //
+/**********
+ * USER *
+ **********/
 
 // Main page route
 router.route('/')
@@ -66,7 +67,9 @@ router.route('/user/getID')
 
 
 
-//-----***** HIKES ****----- //
+/**********
+ * HIKES *
+ **********/
 
 
 // GET main
@@ -84,11 +87,12 @@ router.get('/form', function (req, res) {
   res.render('../views/form.ejs' , { root : __dirname});
 });
 
+// GET user page
 router.get('/user', function (req, res) {
   res.render('../views/user.ejs', { root : __dirname})
 })
 
-// get user
+// GET user db
 router.get('/user/hikes', function(req, res) {
     db.Hike.find({}, function(err, hikes) {
         if (err) console.log(err);
@@ -111,7 +115,7 @@ router.post("/form", function(req,res) {
   Hike.create({name: req.body.name, title: req.body.title});
 });
 
-// POST
+// POST new hike
 router.post("/user/hikes", function(req, res) {
     let newHike = new db.Hike({
         name: req.body.name,

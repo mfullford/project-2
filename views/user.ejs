@@ -6,19 +6,19 @@
   <link rel="stylesheet" href="../../styles/styleUser.css">
 
     <!-- Google fonts -->
-   <link href="https://fonts.googleapis.com/css?family=Archivo+Black" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Archivo+Black" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600" rel="stylesheet">
 
     <!--Icon link -->
 <!--   <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css"> -->
 
-<!--     <!Vendor Scripts -->
+<!--     JQUERY and Handlebar -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.5/handlebars.min.js"></script> 
 
 </head>
 <body>
-      <!-- Navigation bar at top -->
+      <!-- Nav bar -->
 
   <div class="container">
     <div class="parallaxHeader">
@@ -44,12 +44,11 @@
 </div> --> 
 
 <div class ="listMyHikes" id="hikeBox">
-                  <!-- tripcard handlebars template -->
+        <!-- create handlebars template -->
     <script id="hike-template" type="text/x-handlebars-template">
             {{#each hike}}
     <div class ='oneHike'>
       <ul class = 'hikeCard' style='list-style-type:none'>
-        <!-- <li><h2 id='name'>{{name}}</h2></li> -->
         <li><span class='hikeName'>Name: {{name}}</span></li>
         <li><span class='hikeState'>State: {{state}}</span></li>
         <li><span class='hikeDate'>Date: {{date}}</span></li>
@@ -66,9 +65,7 @@
     </script>
 </div>
 
-
-  <section class ="map-and-info">
-
+        <!-- Form to submit for a new hike -->
         <div class="form">
           <form action="/user/hikes" method="POST" id="hike-form">
             <div class="square">
@@ -80,16 +77,10 @@
             <input class="submit" type="submit" name="submit" value="Submit" /></br>
           </form>
         </div>
-      </div>
     </div>
           <!-- Map populates -->
-      <div class="col-6 map-form-col">
           <div id="map"></div>
-
-  </section>
  
-
-
       <!-- Google map scripts -->
     <script async defer
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDkVV9oxUvanUOsvlHPAVp9ru6wf-ZysNY&callback=initMap">
@@ -105,5 +96,5 @@
     <script src="./scripts/app.js"></script>
   
 
-</body>
+  </body>
 </html>
