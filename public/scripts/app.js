@@ -5,6 +5,8 @@ let userId;
 let $hikeBox;
 let template;
 
+
+
 // Run the map
 function initMap() {
     
@@ -165,6 +167,12 @@ function initMap() {
 
 $(document).ready(function() {
 
+let name;
+let state;
+// let longlat;
+let time;
+let date;
+
       //Submit form - add to db
   // $('#hike-form').submit(function(event) {
   //   event.preventDefault();
@@ -299,28 +307,60 @@ $(document).ready(function() {
 //     }
 //     });   
 // });
-$(document).on('click', '#editbutton', function() {
-    hikeId = $(this).attr('id');
-    $('#edit-hike').val("Make Some Changes");
-    $('#commentModal').modal();
-  });
-}; // Document ready function done
+let id;
 
-$('#save-button').on('click', function() {
+$(document).on('click', '#editbutton', function() {
+    id = $(this).attr('data-id');
+    hikeId = $(this).attr('id');
+    $('#edit-hike').val("Make edits");
+    $('#hikeModal').modal();
+  });
+
+$(document).on('click', '#saveButton', function() {
+
+  name = $('#name').val();
+  state = $('#state').val();
+  longlat = $('#longlat').val();
+  date = $('#date').val();
+  time = $('#time').val();
+
+  console.log("Clicked!");
+    // let id = $(this).attr('data-id');
+    console.log(id);
+    // hikeId = $(this).attr('id');
     let editedHike = $('#edit-hike').val();
-    let hikeId = $(this).attr('id');
     $.ajax({
       type: 'put',
-      url: '/user/hikes/',
-      data:({ hikeId: hikeId,
-              editedComment: editedComment })
+      url: '/user/hikes/:id',
+      data:({ id: id,
+              // editedHike: editedHike,
+              name: name,
+              state: state,
+              // longlat: longlat,
+              date: date,
+              time: time
+               })
     });
-
-    alert("Saved!");
-    $('#commentModal').modal('hide');
+    $('#edit-hike').val("Make edits");
+    $('#hikeModal').modal('hide');
   });
 
+// $('#saveButton').on('click', function() {
+//     console.log("Clicked");
+//     let editedHike = $('#edit-hike').val();
+//     let hikeId = $(this).attr('id');
+//     $.ajax({
+//       type: 'put',
+//       url: '/user/hikes/',
+//       data:({ hikeId: hikeId,
+//               editedHike: editedHike })
+//     });
 
+  //   alert("Saved!");
+  //   $('#hikeModal').modal('hide');
+  // });
+
+}; // Document ready function done
 
   // helper function to render all posts to view, it re-renders each time we call it
   function render () {

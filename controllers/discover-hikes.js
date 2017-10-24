@@ -6,6 +6,7 @@ const db = require('../models');
 var passport = require('passport');
 var flash = require('connect-flash');
 var session = require('express-session');
+// let Hike = require('../models/hikes');
 
 
 
@@ -77,18 +78,20 @@ var session = require('express-session');
 // 	});
 // }
 
-// PUT /comments
+// PUT new hike
 function updateHike(req, res, next) {
-	console.log("editComment: controller hit");
-	 db.Song.findOne({_id: req.body.hikeId}, function(err, foundHike) {
-	 	foundHike.comments.forEach(function(data) {
-	 		if(data._id == req.body.hikeId){
-	 			data.comment = req.body.editedHike;
-	 		}
-	 	});
-	 	foundHike.save();
-	 });
-}
+	console.log("editHike: controller hit");
+	 db.Hike.findOne({_id: req.body.id}, function(err, changedHike) {
+	 	console.log(changedHike);
+ 		changedHike.name = req.body.name;
+ 		changedHike.state = req.body.state;
+ 		// changedHike.longlat = req.body.longlat;
+ 		// console.log(longlat);
+ 		changedHike.date = req.body.date;
+ 		changedHike.time = req.body.time
+ 		changedHike.save();
+	 		});
+	 };
 
 
 module.exports = {

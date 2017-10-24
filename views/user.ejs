@@ -24,7 +24,7 @@
     <div class="parallaxHeader">
       <ul>
         <li><a href="/logout">Logout</a></li>
-        <li><a href="/user">My Hikes</a></li>
+        <li><a href="/user">Hikes</a></li>
         <li><a href="/main">Explore</a></li>
       </ul>
         <h1 class="text-center">Hiking Squad</h1>
@@ -34,7 +34,7 @@
       </nav>
   </div>
 
-  <h2> My Hikes </h2>
+  <h2> Hikes </h2>
 
  <!--  <div class="listMyHikes">
         <div class ="row" id="allhikes">
@@ -51,6 +51,7 @@
       <ul class = 'hikeCard' style='list-style-type:none'>
         <li class="newCard"><span class='hikeName'>Name: {{name}}</span></li>
         <li class="newCard"><span class='hikeState'>State: {{state}}</span></li>
+<!--         <li class="newCard"><span class='hikeLong'>Long/Lat: {{longlat}}</span></li> -->
         <li class="newCard"><span class='hikeDate'>Date: {{date}}</span></li>
         <li class="newCard"><span class='hikeTime'>Time: {{time}}</span></li>
       </ul>
@@ -62,7 +63,7 @@
         <!-- Modal for Edit button -->
 
 
-    <div class="modal fade" tabindex="-1" role="dialog" id="commentModal" hidden="true">
+    <div class="modal fade" tabindex="-1" role="dialog" id="hikeModal" hidden="true">
       <div class="modal-dialog" role="document">
         <div class="modal-content content-box">
 
@@ -74,14 +75,15 @@
           </div>
           <div class="modal-body">
             <div class="form-group" id="edit-hike">
-                      <input type="text" class="input nope" placeholder="Enter New Hike Name" name="name">
-                      <input type="text" class="input nope" placeholder="Enter New State" name="state">
-                      <input type="text" class="input nope" placeholder="Enter New Date" name="date">
-                      <input type="text" class="input nope" placeholder="Enter New Time" name="time">
+                      <input type="text" class="input nope" placeholder="Enter New Hike Name" name="name" id="name">
+                      <input type="text" class="input nope" placeholder="Enter New State" name="state" id="state">
+<!--                       <input type="text" class="input nope" placeholder="Enter the Longitude/Latitude" name="longlat" id="longlat"> -->
+                      <input type="text" class="input nope" placeholder="Enter New Date" name="date" id="date">
+                      <input type="text" class="input nope" placeholder="Enter New Time" name="time" id="time">
             </div>            
           </div>
           <div class="modal-footer">
-            <button type="button" class="btn" id="save-button">Save</button>
+            <button type="button" class="btn" id="saveButton">Save</button>
           </div>
         </div>
       </div>
@@ -139,6 +141,7 @@
               <h2>Create a New Hike</h2>
             <input class="input" type="text" placeholder="What is the name of the hike?" name="name"><br>
             <input class="input" type="text" placeholder="Which state is it in?" name="state"><br>
+<!--             <input class="input" type="text" placeholder="What is it the longitude & latitude (use map)?" name="longlat"><br> -->
             <input class="input" type="text" placeholder="What is the date of the hike?" name="date"><br>
             <input class="input" type="text" placeholder="What time is it?" name="time"><br>
             <input class="submit" type="submit" name="submit" value="Submit" /></br>
