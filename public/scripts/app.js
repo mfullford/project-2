@@ -2,10 +2,10 @@
 let userHikes = [];
 // Call userID
 let userId;
-// 
 let $hikeBox;
 let template;
 
+// Run the map
 function initMap() {
     
   // Generates a new map, focused on US
@@ -133,13 +133,11 @@ function initMap() {
   });
 
   function placeMarkerAndPanTo(latLng, map) {
-    //Type of marker
     var marker = new google.maps.Marker({
       position: latLng,
       map: map
     });
 
-    // recenter the map to where the marker was pinned
     map.panTo(latLng);
 
        //when the marker is clicked, open box
@@ -227,6 +225,8 @@ $(document).ready(function() {
 //     }
 //     render();
 //   }
+
+// Get the ID of the user
  $.ajax({
     method: 'GET',
     url: '/user/getID',
@@ -235,6 +235,7 @@ $(document).ready(function() {
     }
   });
 
+// 
   $hikeBox = $('#hikeBox');
 
   //compile handlebars template
@@ -275,7 +276,30 @@ $(document).ready(function() {
       });
     });
 });
-}; // <-- end of document.ready
+
+$(document).on( "click", '#editbutton',function(e) {
+    e.preventDefault();
+    let id = $(this).attr('data-id');
+    var name = $(this).data('name');
+    var state = $(this).data('state');
+    var date = $(this).data('date');
+    var time = $(this).data('time');
+
+    var dataForm = 'name=' + name + '&state=' + state + '&date=' + date + '&time=' + time;
+
+$.ajax({
+    type: 'POST',
+    url: '/user/hikes/',
+    data: dataForm,
+    success: function(html){
+        if(html == "success"){
+            $('#hikes').dataTable().reload();
+            $('#editModal').modal('toggle');
+        }
+    }
+    });   
+});
+}; // Document ready function done
 
   // helper function to render all posts to view, it re-renders each time we call it
   function render () {
@@ -309,7 +333,6 @@ $(document).ready(function() {
     console.log(hike);
     var hikeId = hike._id;
     console.log('delete hike', hikeId);
-    // find the trip with the correct ID and remove it from the usertrip array
     for(var i = 0; i < userHikes.length; i++) {
       if(userHikes[i]._id === hikeId) {
         userHikes.splice(i, 1);

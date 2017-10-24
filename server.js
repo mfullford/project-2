@@ -13,8 +13,6 @@ var bodyParser = require('body-parser');
 app.use(bodyParser.urlencoded({ extended: true }));
 var session = require('express-session');
 
-//Connect to db
-mongoose.connect('mongodb://localhost/hikes');
 
 // Serve static files from public folder
 app.use(express.static(__dirname + '/controllers'));
