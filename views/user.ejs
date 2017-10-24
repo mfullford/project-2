@@ -49,10 +49,10 @@
             {{#each hike}}
     <div class ='oneHike'>
       <ul class = 'hikeCard' style='list-style-type:none'>
-        <li><span class='hikeName'>Name: {{name}}</span></li>
-        <li><span class='hikeState'>State: {{state}}</span></li>
-        <li><span class='hikeDate'>Date: {{date}}</span></li>
-        <li><span class='hikeTime'>Time: {{time}}</span></li>
+        <li class="newCard"><span class='hikeName'>Name: {{name}}</span></li>
+        <li class="newCard"><span class='hikeState'>State: {{state}}</span></li>
+        <li class="newCard"><span class='hikeDate'>Date: {{date}}</span></li>
+        <li class="newCard"><span class='hikeTime'>Time: {{time}}</span></li>
       </ul>
         <div id='hikes'>
         </div>
@@ -74,15 +74,14 @@
           </div>
           <div class="modal-body">
             <div class="form-group" id="edit-hike">
-                      <li class="newCard"><span class='hikeName input'>Enter name: {{name}}</span></li>
-                      <li class="newCard"><span class='hikeState input'>Enter State: {{state}}</span></li>
-                      <li class="newCard"><span class='hikeDate input'>Enter date: {{date}}</span></li>
-                      <li class="newCard"><span class='hikeTime input'>Enter time: {{time}}</span></li>
+                      <input type="text" class="input nope" placeholder="Enter New Hike Name" name="name">
+                      <input type="text" class="input nope" placeholder="Enter New State" name="state">
+                      <input type="text" class="input nope" placeholder="Enter New Date" name="date">
+                      <input type="text" class="input nope" placeholder="Enter New Time" name="time">
             </div>            
           </div>
           <div class="modal-footer">
-            <button type="button" class="btn btn-primary" id="save-comment-button">Save changes</button>
-            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            <button type="button" class="btn" id="save-button">Save</button>
           </div>
         </div>
       </div>

@@ -301,10 +301,26 @@ $(document).ready(function() {
 // });
 $(document).on('click', '#editbutton', function() {
     hikeId = $(this).attr('id');
-    $('#edit-hike').val("Please Enter Your Changes or Delete Comment");
+    $('#edit-hike').val("Make Some Changes");
     $('#commentModal').modal();
   });
 }; // Document ready function done
+
+$('#save-button').on('click', function() {
+    let editedHike = $('#edit-hike').val();
+    let hikeId = $(this).attr('id');
+    $.ajax({
+      type: 'put',
+      url: '/user/hikes/',
+      data:({ hikeId: hikeId,
+              editedComment: editedComment })
+    });
+
+    alert("Saved!");
+    $('#commentModal').modal('hide');
+  });
+
+
 
   // helper function to render all posts to view, it re-renders each time we call it
   function render () {

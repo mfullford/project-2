@@ -124,7 +124,7 @@ li a:hover {
 /*box for all the hikes */
 .oneHike {
 	text-decoration: none;
-	width: 250px;
+	width: 275px;
 	height: 200px;
 	font-size: 20px;
   display: flex;
@@ -143,7 +143,7 @@ li a:hover {
 /*	height: 200px;*/
 	border-radius: 3px;
    	color: white;
-    float: left;
+    float: right;
     margin-top: 1%;
     margin-bottom: 10%;
 }
@@ -152,53 +152,105 @@ li a:hover {
 	font-size: 20px;
 	padding-right: 2px;
 	margin-top: 2px;
-	width: 250px;
+	width: 275px;
 	float: left;
 }
 /*Buttons*/
-.hikebuttons {
+/*.hikebuttons {
 	width: 50%;
 	height: 30%;
 	margin-top: 145px;
 	font-family: 'Montserrat', sans-serif;
   color: black;
-  font-size: 40%;
+  font-size: 80%;
   font-weight: large;
   border: none;
   border-radius: 3px;
 /*  vertical-align: bottom;*/
-  padding: 5px; 
+/*  padding: 5px; 
   display: inline;
-}
+}*/
 #editbutton {
-/*	float: left;*/
+	float: left;
 	background-color: green;
-	margin-left: -190%;
+	margin-left: -95%;
 	margin-right: 2%;
-	margin-top: 15%;
+	margin-top: 60%;
 /*	margin-top: -100%;*/
 font-family: 'Montserrat', sans-serif;
   color: black;
-  font-size: 200%;
+  font-size: 80%;
   font-weight: large;
   border: none;
   border-radius: 3px;
-  width: 75%;
+  width: 30%;
   float: left;
 }
 
 #deletebutton {
 	background-color: red;
-/*	float: right;*/
-	margin-right: 115%;
-	margin-left: -180%;
-	width: 75%;
+	float: right;
+	margin-right: 10%;
+	margin-left: -40%;
+	width: 30%;
 	font-family: 'Montserrat', sans-serif;
 	color: black;
-	font-size: 200%;
+	font-size: 80%;
 	font-weight: large;
 	border: none;
 	border-radius: 3px;
 	float: right;
-	margin-top: 15%;
+	margin-top: 60%;
+}
+
+/*MODAL*/
+.modal-content {
+	position: absolute;
+	background-color: white;
+	border: black 2px solid;
+	z-index: 999;
+	width: 30%;
+	text-align: center;
+	margin-top: -20%;
+}
+.modal-dialogue {
+	width: 30%;
+}
+#commentModal {
+	width: 30%;
+}
+.modal-header {
+	height: 15%;
+}
+.modal-title {
+	margin-top: 5%;
+	margin-bottom: 2%;
+}
+.nope {
+	font-family: 'Montserrat', sans-serif;
+	color: black;
+	border-color: rgba(46, 119, 201, .9);
+	border-style: solid;
+	border-width: 2px;
+}
+.close {
+	float: left;
+	background-color: red;
+	font-size: 15px;
+	border: none;
+	margin-left: 5px;
+	margin-top: -8px;
+}
+.btn {
+	font-family: 'Montserrat', sans-serif;
+  color: black;
+  width: 30%;
+  height: 100%;
+  margin-left: 2%;
+  font-size: 80%;
+  margin-top: 5%;
+  background-color: rgba(46, 119, 201, .9);
+  margin-bottom: 5%;
+  border-radius: 3px;
+  border-style: none;
 }

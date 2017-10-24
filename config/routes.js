@@ -139,6 +139,11 @@ router.get('/user/hikes/:id', function (req, res) {
   });
 });
 
+// EDIT hike
+ router.route('/user/hikes/:id')
+  .put(hikeController.updateHike)
+
+
 // DELETE one hike
 router.delete('/user/hikes/:id', function(req, res) {
   let hikeId = req.params.id;

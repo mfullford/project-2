@@ -77,9 +77,23 @@ var session = require('express-session');
 // 	});
 // }
 
+// PUT /comments
+function updateHike(req, res, next) {
+	console.log("editComment: controller hit");
+	 db.Song.findOne({_id: req.body.hikeId}, function(err, foundHike) {
+	 	foundHike.comments.forEach(function(data) {
+	 		if(data._id == req.body.hikeId){
+	 			data.comment = req.body.editedHike;
+	 		}
+	 	});
+	 	foundHike.save();
+	 });
+}
+
 
 module.exports = {
 	discoverHikes: discoverHikes,
+	updateHike: updateHike
   	// getHikes: getHikes,
   	// postHikes: postHikes,
   	// removeHike: removeHike
